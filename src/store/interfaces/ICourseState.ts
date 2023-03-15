@@ -4,5 +4,4 @@ export interface ICourseState {
   courses: ICourse[];
   isLoading: boolean;
   error: string;
-  count: number;
 }

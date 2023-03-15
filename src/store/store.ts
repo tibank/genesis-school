@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import courseReducer from './reducers/CoursesSlice';
 
 const rootReducer = combineReducers({
-  courseReducer,
+  course: courseReducer,
 });
 
 export const setupStore = () => {

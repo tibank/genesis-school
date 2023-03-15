@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { useAppDispatch, useAppSelector } from './hooks/hooks';
 import { fetchCourses } from './store/reducers/CoursesFetch';
 
 function App() {
-    const dispatch = useAppDispatch();
-    const { courses } = useAppSelector((state) => state.courseReducer);
+  const dispatch = useAppDispatch();
+  const { courses } = useAppSelector((state) => state.course);
 
-    ///useEffect(() => {
-    //    dispatch(fetchCourses());
-    //});
+  useEffect(() => {
+    dispatch(fetchCourses());
+  }, [dispatch]);
 
-    return <div className='App'>{JSON.stringify(courses, null, 2)}</div>;
+  return (
+    <div className='App'>
+      {courses.map((course) => (
+        <div>{course.id}</div>
+      ))}
+    </div>
+  );
 }
 
-//
 export default App;
-function useEffect(arg0: () => void) {
-    throw new Error('Function not implemented.');
-}
