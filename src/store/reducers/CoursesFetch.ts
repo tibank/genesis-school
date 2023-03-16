@@ -26,6 +26,15 @@ export const fetchCourses = () => async (dispatch: AppDispatch) => {
   try {
     console.log(config);
     dispatch(courseSlice.actions.coursesFetching());
+    //axios.defaults.headers.common['Authorization'] = `Authorization: Bearer ${token}`;
+
+    // axios.interceptors.request.use(function (config) {
+    //   const token = 'Bearer ' + localStorage.getItem('token');
+    //   config.headers.Authorization = `Bearer ${token}`;
+
+    //   return config;
+    // });
+
     const response = await axios.get<IResponseCourses>(url, config);
     dispatch(courseSlice.actions.coursesFetchingSuccess(response.data.courses));
   } catch (err: unknown) {
