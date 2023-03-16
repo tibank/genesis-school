@@ -24,6 +24,7 @@ export const fetchCourses = () => async (dispatch: AppDispatch) => {
   }
 
   try {
+    console.log(config);
     dispatch(courseSlice.actions.coursesFetching());
     const response = await axios.get<IResponseCourses>(url, config);
     dispatch(courseSlice.actions.coursesFetchingSuccess(response.data.courses));
