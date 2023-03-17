@@ -1,23 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { CoursesListHeader } from './components/CoursesListHeader';
-import { useAppDispatch, useAppSelector } from './hooks/hooks';
-import { fetchCourses } from './store/reducers/CoursesFetch';
+import { CoursesListHeader } from './components/course/list/header/CoursesListHeader';
+import { CourseListItem } from './components/course/list/item/CourseListItem';
 
 function App() {
-  const dispatch = useAppDispatch();
-  const { courses } = useAppSelector((state) => state.course);
-
-  useEffect(() => {
-    dispatch(fetchCourses());
-  }, [dispatch]);
-
   return (
     <div className='App'>
       <CoursesListHeader />
-      {courses.map((course) => (
-        <div>{course.id}</div>
-      ))}
+      <CourseListItem />
     </div>
   );
 }
