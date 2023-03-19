@@ -1,0 +1,43 @@
+.errorLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.errorContent {
+    position: relative;
+    background: lightcoral;
+    border-radius: 1rem;
+    border: 0.2rem solid indianred;
+    height: 10vh;
+    min-height: 5vh;
+    width: 30vw;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btnBlock {
+    margin: 1.5rem 0;
+}
+
+.btnOK {
+    width: 30%;
+    background-color: indianred;
+    border-radius: 1rem;
+    border: 0.2rem solid indianred;
+    padding: 0.5rem;
+    color: white;
+}
