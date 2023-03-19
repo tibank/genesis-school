@@ -2,14 +2,14 @@ import React, { FC } from 'react';
 import styles from './ColumnListHeader.module.css';
 
 type ColumnHeaderProps = {
-  item: string;
+  title: string;
   width?: number;
 };
 
-export const ColumnListHeader: FC<ColumnHeaderProps> = ({ item, width = 10 }) => {
+export const ColumnListHeader: FC<ColumnHeaderProps> = ({ title, width = 10 }) => {
   return (
     <div className={styles.header} style={{ width: `${width}%` }}>
-      {item}
+      {title}
     </div>
   );
 };
