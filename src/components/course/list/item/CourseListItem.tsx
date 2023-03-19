@@ -1,26 +1,30 @@
 import React, { FC, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/hooks';
 import { fetchCourses } from '../../../../store/reducers/CoursesFetch';
-import styles from './CourseListItem.module.css';
+import { ErrorMessage } from '../../../common/ErrorMessage';
+import { CourseItem } from '../../item/CourseRow';
 
 export const CourseListItem: FC<{}> = () => {
-  const dispatch = useAppDispatch();
-  const { courses } = useAppSelector((state) => state.course);
+    const dispatch = useAppDispatch();
+    const { courses, isLoading, error } = useAppSelector((state) => state.course);
+    const qtyPerPage: number = process.env.REACT_APP_COURSES_PER_PAGE
+        ? parseInt(process.env.REACT_APP_COURSES_PER_PAGE)
+        : 10;
 
-  useEffect(() => {
-    dispatch(fetchCourses());
-  }, [dispatch]);
+    useEffect(() => {
+        dispatch(fetchCourses());
+    }, [dispatch]);
 
-  return (
-    <div>
-      {courses.map((course) => (
-        <div className={styles.list} key={course.id}>
-          <div className={styles.titleWidth}>{course.title} </div>
-          <div className={styles.qtyWidth}>{course.lessonsCount}</div>
-          <div className={styles.skillsWidth}></div>
-          <div className={styles.ratingWidth}>{course.rating}</div>
+    return (
+        <div>
+            {error && <ErrorMessage message={error} />}
+            {courses
+                .filter((course, i) => i < qtyPerPage)
+                .map((course) => (
+                    <div key={course.id}>
+                        <CourseItem course={course} />
+                    </div>
+                ))}
         </div>
-      ))}
-    </div>
-  );
+    );
 };

@@ -15,8 +15,6 @@ export class CourcesService {
     ].join('.');
 
     const url: string = process.env.REACT_APP_BASEURL + 'core/preview-courses';
-    console.log(`token ${token}`);
-    console.log(`url ${url}`);
 
     return await axios.get<IResponseCourses>(url, {
       headers: {
@@ -26,7 +24,7 @@ export class CourcesService {
     });
   }
 
-  static async findAll2() {
-    return await coursesMock();
+  static async findAllMock() {
+    return coursesMock();
   }
 }

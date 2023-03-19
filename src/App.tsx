@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { ErrorMessage } from './components/common/ErrorMessage';
 import { CoursesListHeader } from './components/course/list/header/CoursesListHeader';
 import { CourseListItem } from './components/course/list/item/CourseListItem';
 

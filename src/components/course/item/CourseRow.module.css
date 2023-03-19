@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  padding: 1vh 1vw;
+}
+
+.list:hover {
+  cursor: pointer;
+}
+
+.titleColumn {
+  width: 40vw;
+  text-align: left;
+}
+
+.qtyColumn {
+  width: 5vw;
+  text-align: center;
+}
+
+.skillsColumn {
+  width: 35vw;
+  white-space: pre-line;
+}
+
+.ratingColumn {
+  width: 10vw;
+  text-align: center;
+}
+
+.imageColumn {
+  width: 10vw;
+  overflow: hidden;
+}
+
+.imageBlock img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

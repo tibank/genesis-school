@@ -5,19 +5,19 @@
 }
 
 .titleWidth {
-  width: 40%;
+  width: 40vw;
   text-align: left;
 }
 
 .qtyWidth {
-  width: 10%;
+  width: 10vw;
   text-align: center;
 }
 
 .skillsWidth {
-  width: 20%;
+  width: 30vw;
 }
 
 .ratingWidth {
-  width: 10%;
+  width: 10vw;
 }
